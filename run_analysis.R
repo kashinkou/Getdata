@@ -1,4 +1,4 @@
-##
+## prepare tidy data
 
 ## reading data
 x.train <- read.table("./train/X_train.txt")
@@ -33,3 +33,5 @@ x.ms$activity <- activity.labels[x.ms$activity,2]
 library(reshape)
 xMelt <- melt(x.ms,id=c("subject","activity"))
 
+## save data to text file
+write.table(xMelt,file='tidydata.txt',quote=FALSE)
